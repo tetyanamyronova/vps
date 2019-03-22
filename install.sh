@@ -124,6 +124,7 @@ function install_packages() {
     
     # only for 18.04 // openssl
     if [[ "${VERSION_ID}" == "18.04" ]] ; then
+    apt install software-properties-common -yu
         add-apt-repository -yu ppa:bitcoin/bitcoin  &>> ${SCRIPT_LOGFILE}
         apt-get -qq -o=Dpkg::Use-Pty=0 -o=Acquire::ForceIPv4=true update  &>> ${SCRIPT_LOGFILE}
         apt-get -qqy -o=Dpkg::Use-Pty=0 -o=Acquire::ForceIPv4=true install build-essential \
