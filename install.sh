@@ -346,8 +346,10 @@ function create_systemd_configuration() {
 			After=network.target
 
 			[Service]
-			User=${MNODE_USER}
-			Group=${MNODE_USER}
+			# User=${MNODE_USER}
+			# Group=${MNODE_USER}
+			User=root
+			Group=root
 
 			Type=forking
 			PIDFile=${MNODE_DATA_BASE}/${CODENAME}${NUM}/${CODENAME}.pid
